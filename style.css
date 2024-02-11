@@ -45,4 +45,12 @@ h1{
     height: 500px;
     border: 0.5px solid darkgray;
     box-shadow: #ddd;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    width: calc(100%/var(--numBoxes));
+    height: calc(100%/var(--numBoxes));
+    border: 0.5px solid lightgray;
 }
