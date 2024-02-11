@@ -1,5 +1,9 @@
 const create = document.querySelector('#create');
 const canvas = document.querySelector('.canvas');
+const clearCanvas = document.querySelector('#clear');
+
+
+
 
 create.addEventListener('click', function () {
     let boxes = parseInt(prompt('Number of Boxes'));
@@ -19,4 +23,11 @@ create.addEventListener('click', function () {
             this.classList.add('hovered');
         });
     });
+})
+
+clearCanvas.addEventListener('click', function () {
+    const boxElements = document.querySelectorAll('.box');
+    boxElements.forEach(box => {
+        box.classList.remove('hovered')
+    })
 })
