@@ -54,3 +54,7 @@ h1{
     height: calc(100%/var(--numBoxes));
     border: 0.5px solid lightgray;
 }
+
+.box.hovered{
+    background-color: blue;
+}

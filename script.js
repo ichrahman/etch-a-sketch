@@ -12,4 +12,11 @@ create.addEventListener('click', function () {
             canvas.appendChild(div);
         }
     }
+    // Add event listener for each box
+    const boxElements = document.querySelectorAll('.box');
+    boxElements.forEach(box => {
+        box.addEventListener('mouseenter', function () {
+            this.classList.add('hovered');
+        });
+    });
 })
