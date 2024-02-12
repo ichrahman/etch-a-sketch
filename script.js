@@ -2,6 +2,8 @@ const create = document.querySelector('#create');
 const canvas = document.querySelector('.canvas');
 const clearCanvas = document.querySelector('#clear');
 const eraser = document.querySelector('#eraser');
+// Toggle Eraser
+let eraserToogler = false;
 
 // Take input using slider
 const slider = document.querySelector('#slider');
@@ -50,10 +52,16 @@ clearCanvas.addEventListener('click', function () {
     })
 })
 
-// Toggle Eraser
-let eraserToogler = false;
+
 eraser.addEventListener('click', function () {
     eraserToogler = !eraserToogler;
+    if (eraserToogler) {
+        eraser.style.backgroundColor = 'black';
+        eraser.style.color = 'white';
+    } else {
+        eraser.style.backgroundColor = '';
+        eraser.style.color = '';
+    }
     const boxElements = document.querySelectorAll('.box');
     boxElements.forEach(box => {
         box.addEventListener('mouseover', function () {
