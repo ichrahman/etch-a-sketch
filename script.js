@@ -50,3 +50,16 @@ clearCanvas.addEventListener('click', function () {
     })
 })
 
+// Toggle Eraser
+let eraserToogler = false;
+eraser.addEventListener('click', function () {
+    eraserToogler = !eraserToogler;
+    const boxElements = document.querySelectorAll('.box');
+    boxElements.forEach(box => {
+        box.addEventListener('mouseover', function () {
+            if (eraserToogler) {
+                this.classList.remove('hovered');
+            }
+        })
+    })
+})
