@@ -1,6 +1,7 @@
 const create = document.querySelector('#create');
 const canvas = document.querySelector('.canvas');
 const clearCanvas = document.querySelector('#clear');
+const eraser = document.querySelector('#eraser');
 
 // Take input using slider
 const slider = document.querySelector('#slider');
@@ -19,13 +20,25 @@ slider.addEventListener("input", function () {
             canvas.appendChild(div);
         }
     }
-
+    // Toggle painting on click
+    let isPainting = false;
     // Paint when mouse hover each boxes
     const boxElements = document.querySelectorAll('.box');
     boxElements.forEach(box => {
-        box.addEventListener('mouseenter', function () {
-            this.classList.add('hovered');
+
+        // Add event listeners to each box
+        box.addEventListener("click", function () {
+            isPainting = !isPainting;
+            this.classList.add('hovered')
         });
+
+        box.addEventListener("mouseover", function () {
+            if (isPainting) {
+                this.classList.add('hovered');
+            }
+
+        });
+
     });
 })
 
@@ -36,3 +49,4 @@ clearCanvas.addEventListener('click', function () {
         box.classList.remove('hovered')
     })
 })
+
