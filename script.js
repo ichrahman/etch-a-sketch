@@ -4,6 +4,22 @@ const clearCanvas = document.querySelector('#clear');
 const eraser = document.querySelector('#eraser');
 // Toggle Eraser
 let eraserToogler = false;
+let selectedColor;
+
+// Color picker
+// Get the color picker element
+var colorPicker = document.getElementById("colorPicker");
+
+// Add event listener for when the color changes
+colorPicker.addEventListener("input", function () {
+    // Get the selected color
+    selectedColor = colorPicker.value;
+
+    // Set the selected color as a CSS variable
+    document.documentElement.style.setProperty('--selectedColor', selectedColor);
+    // Do something with the selected color
+    console.log("Selected color: " + selectedColor);
+});
 
 // Take input using slider
 const slider = document.querySelector('#slider');
@@ -71,3 +87,4 @@ eraser.addEventListener('click', function () {
         })
     })
 })
+
