@@ -1,7 +1,12 @@
+// Selectors
 const create = document.querySelector('#create');
 const canvas = document.querySelector('.canvas');
 const clearCanvas = document.querySelector('#clear');
 const eraser = document.querySelector('#eraser');
+const boxElements = document.querySelectorAll('.box');
+const slider = document.querySelector('#slider');
+const output = document.querySelector('#sliderValue');
+
 // Toggle Eraser
 let eraserToogler = false;
 let selectedColor;
@@ -21,11 +26,9 @@ colorPicker.addEventListener("input", function () {
     console.log("Selected color: " + selectedColor);
 });
 
+
+
 // Take input using slider
-const slider = document.querySelector('#slider');
-const output = document.querySelector('#sliderValue');
-
-
 slider.addEventListener("input", function () {
     canvas.innerHTML = " ";
     let inputValue = parseInt(this.value);
@@ -43,7 +46,6 @@ slider.addEventListener("input", function () {
     // Paint when mouse hover each boxes
     const boxElements = document.querySelectorAll('.box');
     boxElements.forEach(box => {
-
         // Add event listeners to each box
         box.addEventListener("click", function () {
             isPainting = !isPainting;
@@ -71,13 +73,7 @@ clearCanvas.addEventListener('click', function () {
 
 eraser.addEventListener('click', function () {
     eraserToogler = !eraserToogler;
-    if (eraserToogler) {
-        eraser.style.backgroundColor = 'black';
-        eraser.style.color = 'white';
-    } else {
-        eraser.style.backgroundColor = '';
-        eraser.style.color = '';
-    }
+
     const boxElements = document.querySelectorAll('.box');
     boxElements.forEach(box => {
         box.addEventListener('mouseover', function () {

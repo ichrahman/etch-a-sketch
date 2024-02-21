@@ -56,7 +56,7 @@ h1{
 }
 
 .box.hovered{
-    background-color: var(--selectedColor);
+    background-color: var(--selectedColor, #333);
 }
 
 /* slider */
